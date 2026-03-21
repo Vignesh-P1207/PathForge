@@ -1,0 +1,32 @@
+Senior Product Manager
+
+Company: InnovateTech
+Location: Remote
+Experience: 5-7 years
+
+Required Skills:
+- Product Strategy & Roadmapping
+- Agile, Scrum, Kanban
+- User Research & Testing
+- Data Analysis (SQL, Excel, Python)
+- A/B Testing & Experimentation
+- Jira, Confluence, Asana
+- Wireframing (Figma, Sketch)
+- Market Research & Competitive Analysis
+- Stakeholder Management
+- Technical Understanding (APIs, System Design)
+- Analytics Tools (Google Analytics, Mixpanel, Amplitude)
+- Product Metrics & KPIs
+- Go-to-Market Strategy
+- Customer Journey Mapping
+- Prioritization Frameworks (RICE, MoSCoW)
+
+Responsibilities:
+- Define product vision and strategy
+- Create and maintain product roadmap
+- Gather and prioritize requirements
+- Work with engineering and design teams
+- Conduct user research and testing
+- Analyze product metrics and user feedback
+- Drive product launches
+- Communicate with stakeholders

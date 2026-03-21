@@ -1,0 +1,47 @@
+Senior Software Developer — Full Stack Web Application Team
+
+Location: Bangalore, India | Remote Eligible
+Experience: 4+ years
+
+About the Role:
+We are looking for an experienced Software Developer to join our product engineering team.
+You will design, develop, and maintain scalable web applications serving millions of users.
+
+Required Skills:
+- Python (Django/FastAPI) — 4+ years, expert level
+- JavaScript/TypeScript — 3+ years, proficient
+- React.js — 3+ years, building complex UIs with hooks, context, and state management
+- Node.js — 2+ years, REST API development
+- PostgreSQL — 3+ years, query optimization, schema design, indexing
+- Docker — 2+ years, containerization, multi-stage builds
+- Kubernetes — 1+ year, deployment, scaling, helm charts
+- CI/CD Pipelines — Jenkins/GitHub Actions, automated testing and deployment
+- Redis — caching layer management, session management
+- System Design — distributed systems, microservices architecture
+- Git — branching strategies, code review workflows
+- AWS (EC2, S3, Lambda, RDS) — cloud infrastructure management
+- GraphQL — API design and implementation
+- REST APIs — design, versioning, documentation (OpenAPI/Swagger)
+
+Nice to Have:
+- Apache Kafka or RabbitMQ for event-driven architectures
+- Terraform or Infrastructure as Code experience
+- Machine Learning integration (MLOps, model serving)
+- Next.js for server-side rendering
+- Elasticsearch for search and analytics
+- Monitoring: Prometheus, Grafana, ELK stack
+
+Responsibilities:
+1. Design and implement new features for our core platform
+2. Write clean, tested, well-documented code following best practices
+3. Participate in architecture discussions and technical design reviews
+4. Mentor junior developers through code reviews and pair programming
+5. Optimize application performance and database queries
+6. Collaborate with product managers to translate requirements into technical solutions
+7. Contribute to CI/CD pipeline improvements and DevOps practices
+
+Qualifications:
+- B.Tech/B.E. in Computer Science or equivalent
+- Strong understanding of data structures, algorithms, and design patterns
+- Experience with Agile/Scrum methodologies
+- Excellent problem-solving and communication skills

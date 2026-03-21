@@ -1,0 +1,33 @@
+Senior DevOps / Cloud Engineer
+
+Company: CloudScale Systems
+Location: Remote
+Experience: 4-6 years
+
+Required Skills:
+- AWS, Azure, GCP (Cloud Platforms)
+- Docker, Kubernetes, Helm
+- Terraform, Ansible, CloudFormation
+- CI/CD (Jenkins, GitLab CI, GitHub Actions, CircleCI)
+- Linux, Bash, PowerShell
+- Python, Go
+- Monitoring (Prometheus, Grafana, ELK Stack)
+- Networking & Security
+- Infrastructure as Code (IaC)
+- Git, Version Control
+- Apache Kafka, RabbitMQ
+- PostgreSQL, MongoDB, Redis
+- Nginx, Load Balancing
+- Microservices Architecture
+- System Design & Scalability
+- Security Best Practices
+
+Responsibilities:
+- Design and maintain cloud infrastructure
+- Implement CI/CD pipelines
+- Automate deployment processes
+- Monitor system performance and reliability
+- Ensure security and compliance
+- Optimize cloud costs
+- Troubleshoot production issues
+- Collaborate with development teams

@@ -1,0 +1,88 @@
+Job Title: Data Analyst
+Department: Business Intelligence & Analytics
+Location: Bangalore, India (Hybrid)
+Experience: 2–5 Years
+
+─────────────────────────────────────────
+ABOUT THE ROLE
+─────────────────────────────────────────
+We are looking for a detail-oriented Data Analyst to join our BI team. You will
+translate raw business data into actionable insights, build dashboards, and work
+closely with product, operations, and finance teams to drive data-informed
+decisions. This is NOT a machine learning or data science role — we need someone
+who is exceptional at analysis, reporting, and storytelling with data.
+
+─────────────────────────────────────────
+KEY RESPONSIBILITIES
+─────────────────────────────────────────
+- Extract, clean, and transform data from multiple sources using SQL and Python
+- Build and maintain interactive dashboards in Tableau and Power BI
+- Perform exploratory data analysis (EDA) to identify trends, anomalies, and
+  business opportunities
+- Write complex SQL queries including CTEs, window functions, and subqueries
+- Collaborate with stakeholders to define KPIs and metrics frameworks
+- Conduct A/B test analysis and interpret statistical significance
+- Prepare weekly and monthly business performance reports for leadership
+- Maintain data dictionaries and documentation for all reporting assets
+- Identify data quality issues and work with data engineering to resolve them
+- Present findings clearly to non-technical audiences using data storytelling
+
+─────────────────────────────────────────
+REQUIRED SKILLS & QUALIFICATIONS
+─────────────────────────────────────────
+Technical Skills:
+- SQL (Advanced): CTEs, window functions, joins, aggregations, query optimization
+- Python: pandas, numpy, matplotlib, seaborn for data manipulation and visualization
+- Tableau: dashboard creation, calculated fields, LOD expressions, data blending
+- Power BI: DAX formulas, data modeling, report publishing
+- Microsoft Excel / Google Sheets: pivot tables, VLOOKUP, advanced formulas
+- Data warehousing concepts: star schema, fact/dimension tables
+- Experience with at least one cloud data warehouse: BigQuery, Redshift, or Snowflake
+- Basic statistics: mean, median, standard deviation, correlation, hypothesis testing
+
+Soft Skills:
+- Strong analytical and critical thinking
+- Excellent written and verbal communication
+- Ability to translate complex data into simple business narratives
+- Attention to detail and accuracy
+- Stakeholder management and presentation skills
+
+Education:
+- Bachelor's degree in Statistics, Mathematics, Economics, Computer Science,
+  or a related quantitative field
+
+─────────────────────────────────────────
+NICE TO HAVE
+─────────────────────────────────────────
+- Experience with dbt (data build tool) for data transformation
+- Familiarity with Looker or Metabase
+- Knowledge of Google Analytics or Mixpanel for product analytics
+- Exposure to Airflow or any ETL pipeline tool
+- Experience with Jira and Confluence for project tracking
+- Basic knowledge of data governance and GDPR compliance
+
+─────────────────────────────────────────
+TOOLS & TECH STACK
+─────────────────────────────────────────
+- Databases: PostgreSQL, MySQL, BigQuery
+- BI Tools: Tableau, Power BI
+- Languages: SQL, Python
+- Cloud: Google Cloud Platform (GCP)
+- Version Control: Git, GitHub
+- Collaboration: Slack, Notion, Confluence
+
+─────────────────────────────────────────
+WHAT WE OFFER
+─────────────────────────────────────────
+- Competitive salary: ₹8–18 LPA depending on experience
+- Hybrid work model (3 days office, 2 days remote)
+- Access to premium data tools and learning platforms
+- Mentorship from senior analysts and data leads
+- Clear growth path: Senior Analyst → Analytics Lead → Analytics Manager
+
+─────────────────────────────────────────
+HOW TO APPLY
+─────────────────────────────────────────
+Submit your resume along with a portfolio link or sample dashboard (Tableau
+Public, GitHub, or Notion). Applications without a work sample will not be
+shortlisted.

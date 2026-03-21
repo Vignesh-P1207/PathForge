@@ -1,0 +1,36 @@
+Senior UX/UI Designer
+
+Company: DesignFirst Studio
+Location: Remote
+Experience: 4-6 years
+
+Required Skills:
+- Figma, Sketch, Adobe XD
+- User Research & Testing
+- Wireframing & Prototyping
+- User Interface Design
+- User Experience Design
+- Design Systems & Component Libraries
+- HTML, CSS (basic understanding)
+- Responsive Design
+- Mobile App Design (iOS, Android)
+- Accessibility Standards (WCAG)
+- Interaction Design
+- Visual Design & Typography
+- Design Thinking
+- Agile, Scrum
+- Collaboration Tools (Miro, FigJam)
+- Usability Testing
+- A/B Testing
+- Analytics (Google Analytics, Hotjar)
+
+Responsibilities:
+- Design user interfaces for web and mobile
+- Conduct user research and testing
+- Create wireframes and prototypes
+- Develop and maintain design systems
+- Collaborate with product and engineering teams
+- Ensure accessibility compliance
+- Iterate based on user feedback
+- Present designs to stakeholders
+- Stay updated with design trends

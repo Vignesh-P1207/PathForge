@@ -1,0 +1,27 @@
+# PATHFORGE — Agent Rules
+
+## Non-negotiable design constraints
+- NEVER change font families. Only: Bebas Neue, Barlow Condensed, Barlow, Courier Prime.
+- NEVER hardcode hex colors. Only use the 8 CSS variables: --ink, --paper, --cream, --accent, --acc2, --red, --blue, --muted.
+- NEVER call any cloud LLM API. All AI calls go to Ollama at OLLAMA_URL (default http://localhost:11434).
+- Default model is qwen3:4b. This is optimized for RTX 3050 6GB VRAM.
+- Section borders are always: 2px solid var(--ink). Never change this.
+- Preserve ALL animations: accentPulse, blink, tickerMove, barPulse, scanDown, grndPulse.
+
+## Code standards
+- React: functional components only, hooks for all state and effects.
+- Python: async/await throughout. Type hints on all function signatures.
+- CSS: always CSS variables, never inline hex values.
+- All Ollama httpx calls must have timeout=120.0 seconds.
+- Always handle JSON parse failure from Ollama gracefully: return [] or {} fallback.
+
+## Never do
+- Never use inline styles in React (use className + index.css).
+- Never use localStorage or sessionStorage.
+- Never commit .env files.
+- Never use window.alert in production paths (use state-based error display instead).
+- Never skip the .rules file when creating the workspace.
+
+## Testing rule
+- After building, always use the browser to verify: upload sample_resume.txt + sample_jd.txt,
+  click FORGE MY PATHWAY, confirm results render with score numbers, skill bars, trace lines, and pathway table.

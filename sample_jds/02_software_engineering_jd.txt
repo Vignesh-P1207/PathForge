@@ -1,0 +1,32 @@
+Senior Full Stack Software Engineer
+
+Company: DevTech Solutions
+Location: Hybrid
+Experience: 4-6 years
+
+Required Skills:
+- JavaScript, TypeScript, Python
+- React, Next.js, Vue.js
+- Node.js, Express, FastAPI
+- PostgreSQL, MongoDB, Redis
+- REST APIs, GraphQL
+- Docker, Kubernetes
+- AWS, Azure, or GCP
+- CI/CD Pipelines
+- Git, GitHub Actions
+- Microservices Architecture
+- System Design
+- Jest, Pytest, Unit Testing
+- Agile, Scrum
+- HTML, CSS, SASS
+- Webpack, Vite
+- OAuth, JWT Authentication
+
+Responsibilities:
+- Design and develop scalable web applications
+- Build RESTful and GraphQL APIs
+- Implement microservices architecture
+- Write clean, maintainable code
+- Conduct code reviews
+- Optimize application performance
+- Collaborate with cross-functional teams

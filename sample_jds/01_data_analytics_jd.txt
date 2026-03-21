@@ -1,0 +1,28 @@
+Senior Data Scientist
+
+Company: TechCorp Analytics
+Location: Remote / Hybrid
+Experience: 3-5 years
+
+Required Skills:
+- Python, R, SQL
+- Machine Learning, Deep Learning
+- TensorFlow, PyTorch, Scikit-learn
+- Pandas, NumPy, Matplotlib, Seaborn
+- Apache Spark, Hadoop
+- AWS, Azure, or GCP
+- Docker, Kubernetes
+- MLOps, CI/CD
+- Jupyter, Git
+- A/B Testing, Statistical Analysis
+- Data Visualization (Tableau, PowerBI)
+- Natural Language Processing
+- Time Series Forecasting
+- Feature Engineering
+
+Responsibilities:
+- Build and deploy ML models
+- Analyze large datasets
+- Create data pipelines
+- Conduct statistical analysis
+- Present insights to stakeholders

@@ -1,0 +1,5 @@
+Senior Full Stack Engineer — AI Product Team
+Required skills: React, TypeScript, Node.js, Python, System Design (distributed systems),
+Kubernetes, Docker, CI/CD Pipelines, PostgreSQL, Redis, Microservices Architecture,
+AWS (EC2/S3/Lambda), GraphQL, REST APIs. Experience: 4+ years.
+Nice to have: Apache Kafka, Terraform, MLOps, Next.js.

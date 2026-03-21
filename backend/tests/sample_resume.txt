@@ -1,0 +1,6 @@
+Alex Johnson — Senior Software Engineer
+5 years experience. Skills: Python (expert), JavaScript (expert), React (proficient),
+Node.js (proficient), PostgreSQL (intermediate), REST APIs (expert), Git (expert),
+Docker (beginner), Linux (intermediate), Agile/Scrum (proficient).
+Education: B.Tech Computer Science, 2019.
+Previous roles: Full Stack Developer at FinTech startup (3 years), Backend Engineer (2 years).
