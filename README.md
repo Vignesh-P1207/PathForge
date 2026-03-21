@@ -1,104 +1,226 @@
-# PATHFORGE
+<div align="center">
 
-> AI-powered skill gap analyzer, learning path generator, and interview readiness predictor — built for IISc submission.
+<img src="https://img.shields.io/badge/PATHFORGE-AI%20Career%20Intelligence-7c5cfc?style=for-the-badge&labelColor=08080d&color=7c5cfc" height="40"/>
 
-PathForge takes a candidate's resume and a job description, then produces a complete, personalized upskilling roadmap with ATS scoring, competency radar, interview prep questions, and a downloadable PDF report. Everything runs locally — no cloud APIs, no data leaves your machine.
+<br/>
+<br/>
+
+**AI-powered skill gap analyzer · Learning path generator · Interview readiness predictor**
+
+*Built for IISc submission — runs 100% locally, zero cloud APIs*
+
+<br/>
+
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev)
+[![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docker.com)
+[![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)](https://ollama.com)
+
+</div>
 
 ---
 
 ## What It Does
 
-Upload a resume + job description (file, pasted text, or URL). PathForge:
+Upload a resume + job description (file, pasted text, or URL). PathForge runs a full pipeline:
 
-1. Extracts skills from both documents using 200+ regex patterns across 14 categories
-2. Runs a transitive skill hierarchy match (e.g. "Deep Learning" covers TensorFlow, PyTorch, NLP, NumPy automatically)
-3. Computes a match score, identifies critical gaps, and builds a DAG-ordered learning path
-4. Scores the resume against ATS criteria across 5 weighted dimensions
-5. Generates an interview readiness report with likely questions and prep strategies
-6. Produces a downloadable PDF report
+```
+Resume + JD  →  Skill Extraction  →  Gap Analysis  →  DAG Learning Path
+                                  ↓
+                         ATS Score  +  Interview Readiness  +  PDF Report
+```
 
-All skill extraction works offline via regex. Ollama (local LLM) is used only for generating training module descriptions for unknown skills — the app is fully functional without it.
-
----
-
-## Key Features
-
-### Single Resume Analyzer
-- Upload resume (PDF, DOCX, TXT) + job description
-- Match score, critical gap count, time-saved percentage
-- Skill proficiency bars for current vs. required skills
-- Competency radar chart (canvas-based, no chart library)
-- AI reasoning trace showing every decision step
-- DAG-ordered learning pathway with week estimates
-
-### ATS Compatibility Panel
-- 5-dimension scoring: keyword match (35%), format/structure (20%), section coverage (20%), quantification (15%), action verbs (10%)
-- Keyword hit/miss lists, section presence check, improvement tips
-- Animated ring gauge
-
-### Interview Readiness Predictor
-- Confidence arc gauge (0–100%)
-- Readiness level: Not Ready / Partially Ready / Interview Ready
-- Danger zones: top gap skills with 2 likely interview questions each + prep strategy
-- Strong zones: top matched skills with showcase questions
-- 30+ pre-built question banks; Ollama fallback for unknown skills
-
-### Bulk Resume Analyzer
-- Upload multiple resumes against one JD
-- Ranked leaderboard with match scores, top skills, critical gaps
-- Common gaps across all candidates
-
-### Standalone ATS Scanner
-- Resume-only or resume + JD scan
-- Formatting issue detection (word count, email, phone)
-- Keyword and section analysis
-
-### Multi-Site JD Scraper
-- Paste a job URL — scraper handles LinkedIn, Indeed, Naukri, Glassdoor, Internshala, Wellfound, Greenhouse, Lever, Workday, Monster, ZipRecruiter
-- JSON-LD schema.org/JobPosting extraction as primary strategy
-- Company name auto-detected from URL domain
-- Graceful fallback with user-friendly error messages when sites block bots
-
-### Operational Role Support
-- 6 operational/labor role templates: Warehouse/Logistics, Retail/Store Ops, Field Technician, Healthcare Support, Hospitality/F&B, Construction/Site
-- Template skills supplement extracted JD skills (not replace them)
-- 45+ pre-built quick modules for operational skills — no Ollama needed
-
-### PDF Report
-- Full A4 report via ReportLab: executive summary, ATS profile, skill tables, reasoning log, learning pathway
-- Download directly from results page
+Everything works offline via regex. Ollama (local LLM) enhances module descriptions — the app is fully functional without it.
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
+<table>
+<tr>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40"/><br/>
+<sub><b>React 18</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" width="40"/><br/>
+<sub><b>Vite</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"/><br/>
+<sub><b>Python 3.11</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" width="40"/><br/>
+<sub><b>FastAPI</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40"/><br/>
+<sub><b>Docker</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg" width="40" onerror="this.style.display='none'"/><br/>
+<sub><b>NetworkX</b></sub>
+</td>
+</tr>
+<tr>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" width="40"/><br/>
+<sub><b>NumPy</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40"/><br/>
+<sub><b>Pandas</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://img.shields.io/badge/-Ollama-000?style=flat-square&logo=ollama" height="28"/><br/>
+<sub><b>Ollama LLM</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://img.shields.io/badge/-ReportLab-e63329?style=flat-square" height="28"/><br/>
+<sub><b>ReportLab</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://img.shields.io/badge/-BeautifulSoup4-4B8BBE?style=flat-square" height="28"/><br/>
+<sub><b>BS4 Scraper</b></sub>
+</td>
+<td align="center" width="120">
+<img src="https://img.shields.io/badge/-PyMuPDF-333?style=flat-square" height="28"/><br/>
+<sub><b>PyMuPDF</b></sub>
+</td>
+</tr>
+</table>
+
+| Layer | Details |
 |---|---|
-| Frontend | React 18, Vite, vanilla CSS (no UI library) |
-| Backend | FastAPI, Python 3.11, Uvicorn |
-| LLM | Ollama (local) — qwen3:4b or llama3.2 |
-| Skill Extraction | Regex (200+ patterns) + SequenceMatcher fuzzy matching |
-| Skill Hierarchy | Custom BFS transitive tree (15+ domains, 400+ nodes) |
-| Learning Path | NetworkX DAG topological sort |
-| PDF | ReportLab |
-| Scraping | httpx + BeautifulSoup4 |
-| File Parsing | PyMuPDF (PDF), python-docx (DOCX) |
-| Containerization | Docker + docker-compose |
+| **Frontend** | React 18, Vite, vanilla CSS — no UI library, custom design system |
+| **Backend** | FastAPI + Uvicorn, async throughout, Pydantic v2 validation |
+| **LLM** | Ollama local inference — `qwen3:4b` or `llama3.2` |
+| **Skill Extraction** | 200+ regex patterns + `SequenceMatcher` fuzzy matching (72% threshold) |
+| **Skill Hierarchy** | Custom BFS transitive tree — 15+ domains, 400+ nodes |
+| **Learning Path** | NetworkX DAG topological sort with prerequisite chains |
+| **PDF** | ReportLab A4 — tables, styles, executive summary |
+| **Scraping** | httpx + BeautifulSoup4 — 11 job sites + JSON-LD fallback |
+| **File Parsing** | PyMuPDF (PDF), python-docx (DOCX), plain text |
 
 ---
 
-## Quick Start (Windows)
+## Features
+
+<details>
+<summary><b>Single Resume Analyzer</b></summary>
+
+- Upload resume (PDF / DOCX / TXT) + job description
+- Match score, critical gap count, time-saved percentage
+- Skill proficiency bars — current vs. required
+- Competency radar chart (canvas-based, zero chart library)
+- AI reasoning trace showing every decision step
+- DAG-ordered learning pathway with week-by-week estimates
+
+</details>
+
+<details>
+<summary><b>ATS Compatibility Panel</b></summary>
+
+- 5-dimension scoring:
+  - Keyword Match — 35%
+  - Format & Structure — 20%
+  - Section Coverage — 20%
+  - Achievement Quantification — 15%
+  - Action Verb Usage — 10%
+- Keyword hit/miss lists, section presence check, improvement tips
+- Animated ring gauge
+
+</details>
+
+<details>
+<summary><b>Interview Readiness Predictor</b></summary>
+
+- Confidence arc gauge (0–100%)
+- Readiness level: `Not Ready` / `Partially Ready` / `Interview Ready`
+- **Danger zones** — top gap skills with 2 likely interview questions + prep strategy each
+- **Strong zones** — top matched skills with showcase questions
+- 30+ pre-built question banks; Ollama fallback for unknown skills
+
+</details>
+
+<details>
+<summary><b>Bulk Resume Analyzer</b></summary>
+
+- Upload multiple resumes against one JD
+- Ranked leaderboard with match scores, top skills, critical gaps
+- Common gaps across all candidates
+
+</details>
+
+<details>
+<summary><b>Standalone ATS Scanner</b></summary>
+
+- Resume-only or resume + JD scan
+- Formatting issue detection (word count, email, phone presence)
+- Keyword and section analysis
+
+</details>
+
+<details>
+<summary><b>Multi-Site JD Scraper</b></summary>
+
+Paste a job URL — scraper handles:
+
+`LinkedIn` · `Indeed` · `Naukri` · `Glassdoor` · `Internshala` · `Wellfound` · `Greenhouse` · `Lever` · `Workday` · `Monster` · `ZipRecruiter`
+
+- JSON-LD `schema.org/JobPosting` as primary extraction strategy
+- Company name auto-detected from URL domain
+- Graceful fallback with user-friendly error messages when sites block bots
+
+</details>
+
+<details>
+<summary><b>Operational Role Support</b></summary>
+
+6 operational/labor role templates with pre-built skill sets:
+
+| Role | Sample Skills |
+|---|---|
+| Warehouse / Logistics | Inventory Management, WMS Software, Forklift Operation |
+| Retail / Store Ops | POS Systems, Visual Merchandising, Loss Prevention |
+| Field Technician | Electrical Systems, Equipment Maintenance, Mobile Reporting |
+| Healthcare Support | HIPAA Compliance, EHR, Vital Signs Monitoring |
+| Hospitality / F&B | Food Safety & Hygiene, Upselling Techniques, POS Systems |
+| Construction / Site | Blueprint Reading, OSHA Regulations, Material Estimation |
+
+Template skills supplement (not replace) JD-extracted skills. 45+ quick modules — no LLM needed.
+
+</details>
+
+<details>
+<summary><b>PDF Report</b></summary>
+
+Full A4 report via ReportLab:
+- Executive summary table (match score, gaps, time saved, weeks to ready)
+- ATS compatibility profile with dimension breakdown
+- Validated competencies + critical gaps tables
+- AI reasoning log
+- Prescribed upskilling pathway
+
+</details>
+
+---
+
+## Quick Start
 
 ### Prerequisites
-- Python 3.11+
-- Node.js 18+
-- [Ollama](https://ollama.com) (optional — app works without it)
 
-### 1. Start the backend
+![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama-optional-000000?style=flat-square&logo=ollama&logoColor=white)
 
-Double-click `start-backend.bat` or run:
+### 1 — Backend
 
 ```bash
+# Windows — double-click start-backend.bat, or:
 cd backend
 python -m venv venv
 venv\Scripts\activate
@@ -108,29 +230,28 @@ uvicorn app.main:app --reload --port 8000
 
 Wait for: `Uvicorn running on http://127.0.0.1:8000`
 
-### 2. Start the frontend
-
-Double-click `start-frontend.bat` or run:
+### 2 — Frontend
 
 ```bash
+# Windows — double-click start-frontend.bat, or:
 cd frontend
 npm install
 npm run dev
 ```
 
-Open `http://localhost:5173` in your browser.
+Open **http://localhost:5173**
 
-### 3. (Optional) Pull an Ollama model
+### 3 — Ollama (optional)
 
 ```bash
 ollama pull qwen3:4b
 ```
 
-The app works without Ollama — it falls back to regex extraction and catalog-based module descriptions.
+The app works fully without Ollama — regex extraction and catalog modules cover everything. Ollama only enhances descriptions for skills not in the built-in catalog.
 
 ---
 
-## Docker (Full Stack)
+## Docker
 
 ```bash
 docker-compose up --build
@@ -150,37 +271,39 @@ docker-compose up --build
 pathforge/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py          # FastAPI routes (/api/analyze, /api/bulk-analyze, /api/ats-scan, /api/report)
-│   │   ├── analyzer.py      # Skill extraction, SKILL_TREE hierarchy, compute_gap()
+│   │   ├── main.py          # FastAPI routes — /api/analyze, /api/bulk-analyze, /api/ats-scan, /api/report
+│   │   ├── analyzer.py      # Skill extraction, SKILL_TREE hierarchy (400+ nodes), compute_gap()
 │   │   ├── dag.py           # Learning path DAG, module catalog, operational role templates
-│   │   ├── interview.py     # Interview readiness predictor, question bank, prep strategies
-│   │   ├── ats.py           # ATS scoring engine (5 dimensions)
+│   │   ├── interview.py     # Interview readiness predictor, 30+ question banks, prep strategies
+│   │   ├── ats.py           # ATS scoring engine — 5 weighted dimensions
 │   │   ├── bulk.py          # Bulk resume analysis
-│   │   ├── scraper.py       # Multi-site JD URL scraper
-│   │   ├── extractor.py     # PDF/DOCX/TXT text extraction
+│   │   ├── scraper.py       # Multi-site JD URL scraper — 11 sites + JSON-LD
+│   │   ├── extractor.py     # PDF / DOCX / TXT text extraction
 │   │   └── models.py        # Pydantic schemas
 │   └── requirements.txt
+│
 ├── frontend/
 │   └── src/
 │       ├── App.jsx                      # Root — state machine, routing, API calls
 │       └── components/
 │           ├── Header.jsx               # Sticky nav, status pill
-│           ├── Hero.jsx                 # Landing hero section
-│           ├── UploadSection.jsx        # Resume + JD upload, role selector
+│           ├── Hero.jsx                 # Landing hero
+│           ├── UploadSection.jsx        # Resume + JD upload, role selector (14 roles)
 │           ├── ScoreBanner.jsx          # Match %, gaps, time saved
-│           ├── AtsPanel.jsx             # ATS score panel
+│           ├── AtsPanel.jsx             # ATS score panel with ring gauge
 │           ├── SkillsGrid.jsx           # Current vs required skill bars
 │           ├── CompetencyRadar.jsx      # Canvas radar chart
 │           ├── ReasoningTrace.jsx       # AI decision log
 │           ├── PathwayTable.jsx         # Learning pathway table
 │           ├── InterviewReadiness.jsx   # Interview readiness section
 │           ├── BulkAnalyzer.jsx         # Bulk mode UI
-│           ├── ATSScanner.jsx           # Standalone ATS scanner UI
-│           ├── ReportDownload.jsx       # PDF download button
+│           ├── ATSScanner.jsx           # Standalone ATS scanner
+│           ├── ReportDownload.jsx       # PDF download
 │           ├── HowItWorks.jsx           # How It Works page
 │           ├── LoadingPanel.jsx         # Full-screen loading overlay
-│           └── ErrorModal.jsx           # In-app error modal (no browser alerts)
-├── sample_jds/                          # Sample job descriptions for testing
+│           └── ErrorModal.jsx           # In-app error modal
+│
+├── sample_jds/                          # 9 sample JDs for testing
 ├── start-backend.bat
 ├── start-frontend.bat
 ├── docker-compose.yml
@@ -192,134 +315,128 @@ pathforge/
 ## API Reference
 
 ### `POST /api/analyze`
+
 Full skill gap analysis for a single resume.
 
-| Field | Type | Required |
-|---|---|---|
-| `resume` | file (PDF/DOCX/TXT) | yes |
-| `job_description` | file (PDF/DOCX/TXT) | one of these |
-| `jd_url` | string (URL) | one of these |
-| `role_domain` | string | yes |
+```
+resume          file (PDF/DOCX/TXT)   required
+job_description file (PDF/DOCX/TXT)   one of these two
+jd_url          string (URL)           one of these two
+role_domain     string                 required
+```
 
 Returns `AnalysisResponse` — match score, skills, pathway, ATS result, interview readiness.
 
 ### `POST /api/bulk-analyze`
-Rank multiple resumes against one JD.
 
-| Field | Type | Required |
-|---|---|---|
-| `resumes` | files[] | yes |
-| `job_description` | file | one of these |
-| `jd_url` | string | one of these |
-| `role_domain` | string | yes |
+Rank multiple resumes against one JD. Same fields as above but `resumes` is a file array.
 
 ### `POST /api/ats-scan`
-Standalone ATS compatibility scan.
 
-Same fields as `/api/analyze`.
+Standalone ATS compatibility scan. Same fields as `/api/analyze`.
 
 ### `POST /api/report`
-Generate a PDF report.
 
-Body: JSON matching `AnalysisResponse` shape.
-Returns: `{ "pdf_base64": "..." }`
+Generate PDF. Body: `AnalysisResponse` JSON. Returns `{ "pdf_base64": "..." }`.
 
 ### `GET /api/health`
-Check backend and Ollama status.
+
+Check backend + Ollama status.
 
 ---
 
-## How Skill Extraction Works
+## How It Works
 
-1. **Section detection** — identifies dedicated Skills sections in the resume and boosts those skills +15 proficiency
-2. **Regex extraction** — 200+ patterns across 14 categories (languages, frameworks, cloud, ML, DevOps, design, etc.)
-3. **Fuzzy matching** — `SequenceMatcher` at 72% threshold catches typos and abbreviations
-4. **Context-aware proficiency** — scans a ±100 character window around each mention for expert/mid/beginner keywords
-5. **Frequency boost** — skills mentioned multiple times get up to +15 proficiency
-6. **Stop word filter** — 40+ generic words (experience, knowledge, strong, etc.) are excluded
+### Skill Extraction Pipeline
 
-## How Gap Analysis Works
+```
+Document text
+    │
+    ├─ 1. Section detection  →  Skills section gets +15 proficiency boost
+    ├─ 2. Regex extraction   →  200+ patterns, 14 categories
+    ├─ 3. Fuzzy matching     →  SequenceMatcher @ 72% threshold
+    ├─ 4. Context proficiency →  ±100 char window for expert/mid/beginner keywords
+    ├─ 5. Frequency boost    →  multi-mention skills get up to +15
+    └─ 6. Stop word filter   →  40+ generic words excluded
+```
 
-1. Resume skills and JD skills are fuzzy-matched
-2. **Transitive hierarchy coverage** — if resume has "Deep Learning" at ≥70%, then TensorFlow, PyTorch, NLP, NumPy, sklearn, Statistics, Linear Algebra, etc. are all marked as covered via BFS walk of `SKILL_TREE`
-3. Unmatched JD skills become gaps
-4. Match % = covered JD skills / total JD skills
+### Gap Analysis — Transitive Hierarchy
 
-## How the Learning Path Works
+```
+Resume has: "Deep Learning" @ 85%
+                │
+                └─ BFS walk of SKILL_TREE
+                        ├─ TensorFlow ✓ covered
+                        ├─ PyTorch    ✓ covered
+                        ├─ NLP        ✓ covered
+                        ├─ NumPy      ✓ covered
+                        ├─ sklearn    ✓ covered
+                        ├─ Statistics ✓ covered
+                        └─ Linear Algebra ✓ covered
 
-1. Gap skills are fed into a NetworkX directed graph with prerequisite edges (e.g. Kubernetes → Docker → Linux)
-2. Topological sort produces a dependency-respecting order
-3. Each skill maps to a built-in module catalog (instant, no LLM) or falls back to Ollama
-4. Week numbers are calculated at 5 hours/week
+Match % = covered JD skills / total JD skills
+```
 
----
+### Learning Path — DAG Sort
 
-## Role Domains
-
-**Knowledge Roles** (8): Data & Analytics, Software Engineering, Product Management, DevOps / Cloud, Sales & Marketing, Operations / Labor, Design / UX, Finance & Risk
-
-**Operational Roles** (6): Warehouse / Logistics, Retail / Store Ops, Field Technician, Healthcare Support, Hospitality / F&B, Construction / Site
-
-Operational roles use pre-built skill templates that supplement (not replace) JD-extracted skills, with 45+ quick training modules requiring no LLM.
+```
+Gap skills → NetworkX DiGraph with prerequisite edges
+                │
+                └─ Topological sort → dependency-respecting order
+                        e.g. Linux → Docker → Kubernetes → Helm
+                                │
+                                └─ Module catalog lookup (instant)
+                                        or Ollama fallback
+                                                │
+                                                └─ Week numbers @ 5 hrs/week
+```
 
 ---
 
 ## Environment Variables
 
-| Variable | Default | Description |
+| Variable | Default | Where |
 |---|---|---|
-| `VITE_API_URL` | `http://localhost:8000` | Backend URL (frontend) |
-| `OLLAMA_URL` | `http://localhost:11434` | Ollama server URL (backend) |
-| `OLLAMA_MODEL` | `llama3.2:latest` | Model to use |
-
-Set `VITE_API_URL` in `frontend/.env`.
-
----
-
-## Sample Job Descriptions
-
-The `sample_jds/` folder contains ready-to-use JD files for testing:
-
-- `data_analyst_jd.txt` — Data Analyst role
-- `07_design_ux_jd.txt` — UX Designer role
-- `sample_data_scientist_jd.txt` — Data Scientist role (root folder)
+| `VITE_API_URL` | `http://localhost:8000` | `frontend/.env` |
+| `OLLAMA_URL` | `http://localhost:11434` | backend env |
+| `OLLAMA_MODEL` | `llama3.2:latest` | backend env |
 
 ---
 
 ## Design Principles
 
-- **No static fallback data** — every result comes from the uploaded documents
-- **Offline-first** — regex extraction works without Ollama; LLM is enhancement only
-- **No external APIs** — no OpenAI, no cloud services, no data leaves the machine
-- **Hallucination score: 0.00** — all modules are grounded against a verified catalog before any LLM call
-- **No browser alerts** — all errors shown via in-app `ErrorModal`
+| Principle | Implementation |
+|---|---|
+| No static fallback data | Every result comes from uploaded documents |
+| Offline-first | Regex extraction works without any LLM |
+| No external APIs | No OpenAI, no cloud services, no data leaves the machine |
+| Hallucination score: 0.00 | All modules grounded against verified catalog before any LLM call |
+| No browser alerts | All errors via in-app `ErrorModal` component |
+| Transitive skill coverage | BFS walk prevents false gaps (Deep Learning covers 20+ sub-skills) |
 
 ---
 
 ## Troubleshooting
 
-**Backend won't start**
-- Ensure Python 3.11+ is installed: `python --version`
-- Activate the venv before running: `venv\Scripts\activate`
+**Backend won't start** — ensure Python 3.11+ and activate venv: `venv\Scripts\activate`
 
-**"Analysis Failed" error**
-- Backend must be running on port 8000 before clicking Forge
-- Check `frontend/.env` has `VITE_API_URL=http://localhost:8000`
+**"Analysis Failed"** — backend must be running on port 8000 before clicking Forge. Check `frontend/.env` has `VITE_API_URL=http://localhost:8000`
 
-**No skills extracted**
-- Ensure the resume is not a scanned image PDF (text must be selectable)
-- Try converting to DOCX or TXT
+**No skills extracted** — resume must have selectable text (not a scanned image PDF). Try converting to DOCX or TXT.
 
-**URL scraping fails**
-- Indeed, Glassdoor, and Naukri actively block bots — use "Paste Text" mode instead
-- LinkedIn works for public job postings
+**URL scraping fails** — Indeed, Glassdoor, Naukri actively block bots. Use "Paste Text" mode instead.
 
-**Ollama not connected**
-- App works fully without Ollama — only module descriptions fall back to generic text
-- To enable: install Ollama, run `ollama pull qwen3:4b`, restart backend
+**Ollama not connected** — app works fully without it. To enable: `ollama pull qwen3:4b` then restart backend.
 
 ---
 
-## License
+<div align="center">
 
-MIT
+Built with ♦ for IISc · MIT License
+
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Made with React](https://img.shields.io/badge/Made%20with-React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Runs Locally](https://img.shields.io/badge/Runs-100%25%20Locally-7c5cfc?style=flat-square)
+![No Cloud APIs](https://img.shields.io/badge/Zero-Cloud%20APIs-e63329?style=flat-square)
+
+</div>
