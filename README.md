@@ -211,50 +211,47 @@ Full A4 report via ReportLab:
 
 ## Quick Start
 
-### Prerequisites
-
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)
-![Node](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=nodedotjs&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-optional-000000?style=flat-square&logo=ollama&logoColor=white)
-
-### 1 — Backend
-
-```bash
-# Windows — double-click start-backend.bat, or:
-cd backend
-python -m venv venv
-venv\Scripts\activate
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
-```
-
-Wait for: `Uvicorn running on http://127.0.0.1:8000`
-
-### 2 — Frontend
-
-```bash
-# Windows — double-click start-frontend.bat, or:
-cd frontend
-npm install
-npm run dev
-```
-
-Open **http://localhost:5173**
-
-### 3 — Ollama (optional)
-
-```bash
-ollama pull qwen3:4b
-```
-
-The app works fully without Ollama — regex extraction and catalog modules cover everything. Ollama only enhances descriptions for skills not in the built-in catalog.
+Choose your method — Docker (recommended) or Manual.
 
 ---
 
-## Docker
+### Method 1 — Docker (Recommended)
 
-```bash
-docker-compose up --build
+> Requires: [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+#### First-time setup
+
+```powershell
+# Step 1 — Clone the repo
+git clone https://github.com/YOUR_USERNAME/pathforge.git
+cd pathforge
+
+# Step 2 — Build and start all containers
+docker compose up --build
+
+# Step 3 — Pull the LLM model (new terminal, first time only)
+docker exec -it pathforge-ollama-1 ollama pull qwen3:4b
+
+# Step 4 — Open the app
+start http://localhost:3000
+```
+
+#### Every run after that
+
+```powershell
+# Models are cached in the Docker volume — no re-pulling needed
+docker compose up
+
+# Open the app
+start http://localhost:3000
+```
+
+#### What you should see when ready
+
+```
+pathforge-backend-1   | INFO:     Uvicorn running on http://0.0.0.0:8000
+pathforge-frontend-1  | ➜  Local: http://localhost:3000/
+pathforge-ollama-1    | Ollama is running
 ```
 
 | Service | URL |
@@ -262,6 +259,47 @@ docker-compose up --build
 | Frontend | http://localhost:3000 |
 | Backend API | http://localhost:8000 |
 | Ollama | http://localhost:11434 |
+
+---
+
+### Method 2 — Manual (PowerShell)
+
+> Requires: Python 3.11+, Node.js 18+, two terminal windows
+
+#### Terminal 1 — Backend
+
+```powershell
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+Wait for: `INFO: Uvicorn running on http://127.0.0.1:8000`
+
+#### Terminal 2 — Frontend
+
+```powershell
+cd frontend
+npm install
+npm run dev
+```
+
+Open **http://localhost:5173**
+
+#### Ollama (optional — enhances module descriptions)
+
+```powershell
+# Install from https://ollama.com, then:
+ollama pull qwen3:4b
+```
+
+The app works fully without Ollama. Regex extraction covers all skill detection — Ollama only enriches module descriptions for skills outside the built-in catalog.
+
+#### One-click start (Windows)
+
+Double-click `start-backend.bat` and `start-frontend.bat` in the project root.
 
 ---
 
