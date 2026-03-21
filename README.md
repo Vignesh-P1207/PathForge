@@ -229,8 +229,9 @@ cd pathforge
 # Step 2 — Build and start all containers
 docker compose up --build
 
-# Step 3 — Pull the LLM model (new terminal, first time only)
+# Step 3 — Pull models (new terminal, first time only)
 docker exec -it pathforge-ollama-1 ollama pull qwen3:4b
+docker exec -it pathforge-ollama-1 ollama pull nomic-embed-text
 
 # Step 4 — Open the app
 start http://localhost:3000
