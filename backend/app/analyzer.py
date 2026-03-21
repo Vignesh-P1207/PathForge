@@ -648,6 +648,24 @@ PARENT_COVERS_CHILD_THRESHOLD = 70
 OLLAMA_URL: str = os.getenv("OLLAMA_URL", "http://localhost:11434")
 DEFAULT_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.2:latest")
 
+# ── Ollama availability flag — set once at startup via check_ollama_health() ──
+_OLLAMA_AVAILABLE: bool = True
+
+
+async def check_ollama_health() -> bool:
+    """Probe Ollama once at startup. Sets module-level flag to avoid per-call timeouts."""
+    global _OLLAMA_AVAILABLE
+    try:
+        async with httpx.AsyncClient(timeout=3.0) as client:
+            resp = await client.get(f"{OLLAMA_URL}/api/tags")
+            resp.raise_for_status()
+            _OLLAMA_AVAILABLE = True
+            print(f"[INFO] Ollama reachable at {OLLAMA_URL} — LLM mode active")
+    except Exception:
+        _OLLAMA_AVAILABLE = False
+        print(f"[INFO] Ollama not available — running in regex-only mode")
+    return _OLLAMA_AVAILABLE
+
 # ── Comprehensive skill patterns ──────────────────────────────────────────────
 SKILL_PATTERNS: list[str] = [
     # Programming Languages
@@ -903,9 +921,11 @@ def _extract_skills_regex(text: str, doc_type: str) -> list[dict[str, Any]]:
 
 
 async def call_ollama(prompt: str, model: str = DEFAULT_MODEL) -> str:
-    """Call Ollama API and return response text."""
+    """Call Ollama API and return response text. Short-circuits immediately if offline."""
+    if not _OLLAMA_AVAILABLE:
+        return ""
     try:
-        async with httpx.AsyncClient(timeout=30.0) as client:
+        async with httpx.AsyncClient(timeout=3.0) as client:
             resp = await client.post(
                 f"{OLLAMA_URL}/api/generate",
                 json={"model": model, "prompt": prompt, "stream": False},
@@ -913,8 +933,7 @@ async def call_ollama(prompt: str, model: str = DEFAULT_MODEL) -> str:
             resp.raise_for_status()
             data = resp.json()
             return str(data.get("response", ""))
-    except Exception as e:
-        print(f"[WARN] Ollama unavailable: {e}")
+    except Exception:
         return ""
 
 

@@ -2,13 +2,14 @@
 
 import asyncio
 import math
+from contextlib import asynccontextmanager
 from typing import Any
 
 from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 import httpx
 
-from .analyzer import OLLAMA_URL, DEFAULT_MODEL, compute_gap, extract_skills
+from .analyzer import OLLAMA_URL, DEFAULT_MODEL, compute_gap, extract_skills, check_ollama_health
 from .ats import score_ats
 from .bulk import bulk_analyze
 from .scraper import scrape_jd_from_url
@@ -26,7 +27,14 @@ from .models import (
     InterviewReadinessResponse, DangerZone, StrongZone,
 )
 
-app = FastAPI(title="PathForge API", version="2.0.0")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Run startup checks before accepting requests."""
+    await check_ollama_health()
+    yield
+
+
+app = FastAPI(title="PathForge API", version="2.0.0", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,

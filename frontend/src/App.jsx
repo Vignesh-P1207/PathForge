@@ -18,7 +18,7 @@ import ReportDownload from './components/ReportDownload';
 import InterviewReadiness from './components/InterviewReadiness';
 import ErrorModal from './components/ErrorModal';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const API_URL = import.meta.env.VITE_API_URL || '';
 
 // Extract readable company/portal name from a URL
 function companyFromUrl(url) {
