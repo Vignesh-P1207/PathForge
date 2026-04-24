@@ -7,7 +7,7 @@
 
 **AI-powered skill gap analyzer · Learning path generator · Interview readiness predictor**
 
-*Built for IISc submission — runs 100% locally, zero cloud APIs*
+*Built for Rockverse Hackathon submission — runs 100% locally, zero cloud APIs*
 
 <br/>
 
@@ -471,7 +471,7 @@ Gap skills → NetworkX DiGraph with prerequisite edges
 
 <div align="center">
 
-Built with ♦ for IISc · MIT License
+Built with ♦ for Rockverse  Hackathon · MIT License
 
 ![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Made with React](https://img.shields.io/badge/Made%20with-React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
